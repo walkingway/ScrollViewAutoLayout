@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ScrollViewAutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" userLabel="MainView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVA-hK-U1W" userLabel="DummyView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-Ks-hP2" userLabel="ScrollView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8G-8d-i4c" userLabel="ContainerView">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="233" translatesAutoresizingMaskIntoConstraints="NO" id="hsA-PS-9lU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="240" id="lyu-Lh-2zo"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4en-ce-qBU">
+                                                        <rect key="frame" x="0.0" y="240" width="600" height="360"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <prototypes>
+                                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TOZ-o1-1zt">
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TOZ-o1-1zt" id="oxt-K2-jmU">
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </tableViewCellContentView>
+                                                            </tableViewCell>
+                                                        </prototypes>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="vXZ-lx-hvc" id="HvY-vy-3nx"/>
+                                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="wOR-yp-9Jk"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="hsA-PS-9lU" secondAttribute="trailing" id="4Kc-rr-mgu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4en-ce-qBU" secondAttribute="bottom" id="6E4-FU-cS4"/>
+                                                    <constraint firstItem="hsA-PS-9lU" firstAttribute="leading" secondItem="F8G-8d-i4c" secondAttribute="leading" id="GAp-9x-pQa"/>
+                                                    <constraint firstItem="hsA-PS-9lU" firstAttribute="top" secondItem="F8G-8d-i4c" secondAttribute="top" id="W5x-HU-s7v"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4en-ce-qBU" secondAttribute="trailing" id="hhh-xv-uT9"/>
+                                                    <constraint firstItem="4en-ce-qBU" firstAttribute="leading" secondItem="F8G-8d-i4c" secondAttribute="leading" id="kAw-r6-hJa"/>
+                                                    <constraint firstItem="4en-ce-qBU" firstAttribute="top" secondItem="hsA-PS-9lU" secondAttribute="bottom" id="lMx-ck-kbR"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="F8G-8d-i4c" secondAttribute="trailing" id="N11-FS-Hur"/>
+                                            <constraint firstAttribute="bottom" secondItem="F8G-8d-i4c" secondAttribute="bottom" id="fFx-OU-0wg"/>
+                                            <constraint firstItem="F8G-8d-i4c" firstAttribute="top" secondItem="Iur-Ks-hP2" secondAttribute="top" id="fmy-Dg-9Z6"/>
+                                            <constraint firstItem="F8G-8d-i4c" firstAttribute="leading" secondItem="Iur-Ks-hP2" secondAttribute="leading" id="u8q-p4-kAL"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Iur-Ks-hP2" secondAttribute="trailing" id="6c1-c6-DSb"/>
+                                    <constraint firstItem="F8G-8d-i4c" firstAttribute="width" secondItem="OVA-hK-U1W" secondAttribute="width" id="M4P-CR-fNV"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iur-Ks-hP2" secondAttribute="bottom" id="MvQ-xG-Lzl"/>
+                                    <constraint firstItem="F8G-8d-i4c" firstAttribute="height" secondItem="OVA-hK-U1W" secondAttribute="height" id="V4q-6W-DP9"/>
+                                    <constraint firstItem="Iur-Ks-hP2" firstAttribute="top" secondItem="OVA-hK-U1W" secondAttribute="top" id="gEt-OK-7fr"/>
+                                    <constraint firstItem="Iur-Ks-hP2" firstAttribute="leading" secondItem="OVA-hK-U1W" secondAttribute="leading" id="tej-GC-C0V"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OVA-hK-U1W" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="0NU-es-FTZ"/>
+                            <constraint firstItem="OVA-hK-U1W" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="0ic-Wg-4lY"/>
+                            <constraint firstAttribute="trailing" secondItem="OVA-hK-U1W" secondAttribute="trailing" id="B9R-PQ-TcV"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="OVA-hK-U1W" secondAttribute="bottom" id="auH-FJ-IRJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dummyView" destination="OVA-hK-U1W" id="gXF-H1-62L"/>
+                        <outlet property="scrollView" destination="Iur-Ks-hP2" id="1Wa-f5-COc"/>
+                        <outlet property="tableView" destination="4en-ce-qBU" id="UXh-Oh-J2k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="331" y="397"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="233" width="640" height="640"/>
+    </resources>
+</document>

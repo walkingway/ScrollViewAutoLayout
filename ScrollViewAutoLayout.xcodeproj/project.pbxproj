@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A90883026AC979FCEE30E164 /* libPods-ScrollViewAutoLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0C3359221A034ACA721CEB /* libPods-ScrollViewAutoLayout.a */; };
 		F864B7E01BA03E6D00151B4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F864B7DF1BA03E6D00151B4A /* AppDelegate.swift */; };
 		F864B7E21BA03E6D00151B4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F864B7E11BA03E6D00151B4A /* ViewController.swift */; };
 		F864B7E51BA03E6D00151B4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F864B7E31BA03E6D00151B4A /* Main.storyboard */; };
@@ -27,9 +26,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		828C5624A596EE2B6ED69B1E /* Pods-ScrollViewAutoLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewAutoLayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewAutoLayout/Pods-ScrollViewAutoLayout.debug.xcconfig"; sourceTree = "<group>"; };
-		AD1F63530F300376BE9DA3B2 /* Pods-ScrollViewAutoLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollViewAutoLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrollViewAutoLayout/Pods-ScrollViewAutoLayout.release.xcconfig"; sourceTree = "<group>"; };
-		BF0C3359221A034ACA721CEB /* libPods-ScrollViewAutoLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScrollViewAutoLayout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F864B7DA1BA03E6D00151B4A /* ScrollViewAutoLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewAutoLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F864B7DE1BA03E6D00151B4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F864B7DF1BA03E6D00151B4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A90883026AC979FCEE30E164 /* libPods-ScrollViewAutoLayout.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,18 +59,8 @@
 		909ED5FE0A07682303042509 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF0C3359221A034ACA721CEB /* libPods-ScrollViewAutoLayout.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D151BBFA49095AA69824BDC0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				828C5624A596EE2B6ED69B1E /* Pods-ScrollViewAutoLayout.debug.xcconfig */,
-				AD1F63530F300376BE9DA3B2 /* Pods-ScrollViewAutoLayout.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		F864B7D11BA03E6D00151B4A = {
@@ -84,7 +69,6 @@
 				F864B7DC1BA03E6D00151B4A /* ScrollViewAutoLayout */,
 				F864B7F21BA03E6D00151B4A /* ScrollViewAutoLayoutTests */,
 				F864B7DB1BA03E6D00151B4A /* Products */,
-				D151BBFA49095AA69824BDC0 /* Pods */,
 				909ED5FE0A07682303042509 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -246,7 +230,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 		6ED012CC4407C33F04C1A7CF /* Copy Pods Resources */ = {
@@ -261,7 +246,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrollViewAutoLayout/Pods-ScrollViewAutoLayout-resources.sh\"\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -397,7 +383,6 @@
 		};
 		F864B7FA1BA03E6D00151B4A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 828C5624A596EE2B6ED69B1E /* Pods-ScrollViewAutoLayout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScrollViewAutoLayout/Info.plist;
@@ -408,7 +393,6 @@
 		};
 		F864B7FB1BA03E6D00151B4A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD1F63530F300376BE9DA3B2 /* Pods-ScrollViewAutoLayout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ScrollViewAutoLayout/Info.plist;

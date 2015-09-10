@@ -30,8 +30,20 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    
+    if tableView.frame.size.height != tableView.contentSize.height {
+      tableView.frame.size = tableView.contentSize
+      scrollView.contentSize = CGSizeMake(self.view.bounds.width, tableView.frame.origin.y + tableView.contentSize.height)
+      self.view.frame.size = scrollView.contentSize
+    }
+    
+    bottom.constant = view.frame.size.height - UIScreen.mainScreen().bounds.height
+    //    scrollView.frame = scrollViewframe!
+  }
+  
 }
 
 extension ViewController: UITableViewDataSource {
@@ -49,19 +61,6 @@ extension ViewController: UITableViewDataSource {
     cell.textLabel?.text = "\(indexPath.row)"
     
     return cell
-  }
-  
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    
-    if tableView.frame.size.height != tableView.contentSize.height {
-      tableView.frame.size = tableView.contentSize
-      scrollView.contentSize = CGSizeMake(self.view.bounds.width, tableView.frame.origin.y + tableView.contentSize.height)
-      self.view.frame.size = scrollView.contentSize
-    }
-    
-    bottom.constant = view.frame.size.height - UIScreen.mainScreen().bounds.height
-//    scrollView.frame = scrollViewframe!
   }
   
 }

@@ -57,6 +57,7 @@ extension ViewController: UITableViewDataSource {
   }
   
   override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
     scrollView.frame = scrollViewframe!
   }
   

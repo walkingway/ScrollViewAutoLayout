@@ -12,13 +12,14 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var bottom: NSLayoutConstraint!
 
   var scrollViewframe: CGRect?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    scrollViewframe = self.view.frame
+//    scrollViewframe = self.view.frame
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -47,18 +48,20 @@ extension ViewController: UITableViewDataSource {
     
     cell.textLabel?.text = "\(indexPath.row)"
     
+    return cell
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    
     if tableView.frame.size.height != tableView.contentSize.height {
       tableView.frame.size = tableView.contentSize
       scrollView.contentSize = CGSizeMake(self.view.bounds.width, tableView.frame.origin.y + tableView.contentSize.height)
       self.view.frame.size = scrollView.contentSize
     }
     
-    return cell
-  }
-  
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    scrollView.frame = scrollViewframe!
+    bottom.constant = view.frame.size.height - UIScreen.mainScreen().bounds.height
+//    scrollView.frame = scrollViewframe!
   }
   
 }
